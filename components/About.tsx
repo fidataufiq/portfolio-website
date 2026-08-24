@@ -1,7 +1,9 @@
+import Container from "@/components/Container";
+
 export default function About() {
   return (
     <section className="border-t border-neutral-200 py-24">
-      <div className="mx-auto grid max-w-5xl gap-12 px-6 md:grid-cols-[1fr_1.5fr]">
+      <Container className="grid gap-12 md:grid-cols-[1fr_1.5fr]">
         <div>
           <p className="text-sm font-medium tracking-wide text-blue-600">ABOUT ME</p>
 
@@ -15,7 +17,7 @@ export default function About() {
 
           <p>I&apos;m currently focused on strengthening my skills, building real projects, and continuously learning how to create better digital products.</p>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
