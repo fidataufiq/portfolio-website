@@ -3,45 +3,55 @@ import Container from "@/components/Container";
 
 export default function Hero() {
   return (
-    <section className="py-24 sm:py-32">
+    <section className="pb-24 pt-40 sm:pb-32 sm:pt-48">
       <Container>
-        <div className="max-w-3xl">
-          <p className="text-sm font-medium tracking-[0.2em] text-blue-600">IT · DESIGN · DEVELOPMENT</p>
+        <div className="grid items-center gap-12 lg:grid-cols-[1.6fr_0.8fr]">
+          <div>
+            <p className="text-xs font-medium tracking-[0.18em] text-blue-500">IT · DESIGN · DEVELOPMENT</p>
 
-          <h1 className="mt-6 text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">Building digital experiences with technology and thoughtful design.</h1>
+            <h1 className="mt-4 max-w-3xl text-4xl font-semibold uppercase leading-[1.2] tracking-tight text-neutral-100 sm:text-5xl">Building digital experiences through technology and thoughtful design</h1>
 
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-neutral-500 sm:text-xl">
-            I&apos;m Fida Taufiq Imazuddin, an IT enthusiast exploring technology, UI/UX design, and modern web development through continuous learning and real projects.
-          </p>
+            <p className="mt-6 max-w-xl text-sm leading-6 text-neutral-500 sm:text-base">
+              I&apos;m Fida Taufiq Imazuddin, an IT enthusiast exploring technology, UI/UX design, and modern web development through continuous learning and real projects.
+            </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link href="/projects" className="rounded-full bg-neutral-900 px-5 py-3 text-sm font-medium text-white transition hover:bg-neutral-700">
-              View projects
-            </Link>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/projects" className="rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition duration-300 hover:-translate-y-1 hover:bg-neutral-200 hover:shadow-lg hover:shadow-white/10">
+                View Projects
+              </Link>
 
-            <Link href="/about" className="rounded-full border border-neutral-200 px-5 py-3 text-sm font-medium text-neutral-700 transition hover:border-neutral-300 hover:bg-neutral-50">
-              More about me
-            </Link>
+              <Link href="/about" className="rounded-full border border-neutral-700 px-5 py-3 text-sm font-medium text-neutral-400 transition duration-300 hover:-translate-y-1 hover:border-neutral-500 hover:bg-white/5 hover:text-white">
+                More about me
+              </Link>
+            </div>
           </div>
 
-          <div className="mt-16 grid max-w-xl grid-cols-3 gap-6 border-t border-neutral-200 pt-8">
-            <div>
-              <p className="text-2xl font-semibold tracking-tight">IT</p>
+          <div className="relative mx-auto hidden w-full max-w-xs lg:block">
+            <div className="aspect-square rounded-full bg-neutral-200" />
 
-              <p className="mt-1 text-sm text-neutral-500">Technology</p>
+            <div className="absolute inset-0 flex items-end justify-center">
+              <div className="flex h-full w-full items-end justify-center text-neutral-500">{/* Foto akan kita masukkan pada tahap berikutnya */}</div>
             </div>
+          </div>
+        </div>
 
-            <div>
-              <p className="text-2xl font-semibold tracking-tight">UI/UX</p>
+        <div className="mt-16 grid grid-cols-3 border-t border-neutral-800 pt-5">
+          <div>
+            <p className="text-lg font-medium text-neutral-200">IT</p>
 
-              <p className="mt-1 text-sm text-neutral-500">Design</p>
-            </div>
+            <p className="mt-1 text-xs text-neutral-600">Technology</p>
+          </div>
 
-            <div>
-              <p className="text-2xl font-semibold tracking-tight">WEB</p>
+          <div>
+            <p className="text-lg font-medium text-neutral-200">UI/UX</p>
 
-              <p className="mt-1 text-sm text-neutral-500">Development</p>
-            </div>
+            <p className="mt-1 text-xs text-neutral-600">Design</p>
+          </div>
+
+          <div>
+            <p className="text-lg font-medium text-neutral-200">WEB</p>
+
+            <p className="mt-1 text-xs text-neutral-600">Development</p>
           </div>
         </div>
       </Container>
