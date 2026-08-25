@@ -4,12 +4,16 @@ import ProjectCard from "@/components/ProjectCard";
 import SectionHeading from "@/components/SectionHeading";
 import { projects } from "@/data/projects";
 import Reveal from "@/components/Reveal";
+import Parallax from "@/components/Parallax";
 
 export default function Projects() {
   const featuredProjects = projects.slice(0, 4);
 
   return (
-    <section className="py-16 sm:py-24">
+    <section className="relative overflow-hidden py-16 sm:py-24">
+      <Parallax offset={-50} className="pointer-events-none absolute left-0 top-1/2 hidden -translate-x-1/2 lg:block">
+        <div className="h-72 w-72 rounded-full border border-neutral-900" />
+      </Parallax>
       <Container>
         <Reveal>
           <SectionHeading eyebrow="SELECTED WORK" title="Craft & Code" description="Exploring the intersection of design and technology through practical web applications." />

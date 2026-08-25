@@ -1,10 +1,14 @@
 import Link from "next/link";
 import Container from "@/components/Container";
 import Reveal from "@/components/Reveal";
+import Parallax from "@/components/Parallax";
 
 export default function Hero() {
   return (
-    <section className="pb-24 pt-40 sm:pb-32 sm:pt-48">
+    <section className="relative overflow-hidden pb-24 pt-40 sm:pb-32 sm:pt-48">
+      <Parallax offset={-80} className="pointer-events-none absolute -right-32 top-20 hidden lg:block">
+        <div className="h-96 w-96 rounded-full border border-neutral-800" />
+      </Parallax>
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-[1.6fr_0.8fr]">
           <div>
@@ -36,9 +40,9 @@ export default function Hero() {
             </Reveal>
           </div>
 
-          <div className="relative mx-auto hidden w-full max-w-xs lg:block">
+          <Parallax offset={60} className="relative mx-auto hidden w-full max-w-xs lg:block">
             <div className="aspect-square rounded-full bg-neutral-200" />
-          </div>
+          </Parallax>
         </div>
 
         <div className="mt-12 grid grid-cols-3 border-t border-neutral-800 pt-4">
