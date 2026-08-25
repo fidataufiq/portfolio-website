@@ -2,15 +2,15 @@ import Container from "@/components/Container";
 
 export default function About() {
   return (
-    <section className="border-t border-neutral-200 py-24">
+    <section className="py-16 sm:py-24">
       <Container className="grid gap-12 md:grid-cols-[1fr_1.5fr]">
         <div>
-          <p className="text-sm font-medium tracking-wide text-blue-600">ABOUT ME</p>
+          <p className="text-label font-medium text-blue-500">ABOUT ME</p>
 
-          <h2 className="mt-3 text-4xl font-semibold tracking-tight">A curious mind behind the screen.</h2>
+          <h2 className="text-heading mt-4 font-semibold text-neutral-100">A curious mind behind the screen.</h2>
         </div>
 
-        <div className="space-y-6 text-lg leading-8 text-neutral-500">
+        <div className="text-body space-y-6 text-neutral-500">
           <p>I&apos;m an IT enthusiast with an interest in technology, UI/UX design, and web development. I enjoy exploring how technology can be turned into useful and intuitive digital experiences.</p>
 
           <p>My journey in technology has taken me through different areas, from computer systems and Android development to interface design and modern web technologies.</p>
