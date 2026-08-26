@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const navigation = [
   {
@@ -27,7 +27,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 20);
     };
 
     handleScroll();
@@ -48,53 +48,49 @@ export default function Navbar() {
   };
 
   return (
-    <header className="pointer-events-none fixed left-0 top-0 z-50 w-full px-4 pt-5 sm:px-6">
-      <nav
-        className={`pointer-events-auto mx-auto flex max-w-fit items-center rounded-full border transition-all duration-500 ${
-          isScrolled ? "border-neutral-700/80 bg-neutral-950/90 shadow-lg shadow-black/40 backdrop-blur-xl" : "border-neutral-800/70 bg-neutral-900/70 backdrop-blur-md"
-        }`}
-      >
-        <div className="flex items-center px-2 py-2">
-          <Link href="/" onClick={() => setIsOpen(false)} className="rounded-full px-3 py-2 text-xs font-medium text-neutral-400 transition hover:text-white">
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "py-3" : "py-0"}`}>
+      <nav className={`mx-auto max-w-5xl px-6 transition-all duration-300 ${isScrolled ? "rounded-2xl border border-neutral-800/80 bg-[#0b0b0c]/90 shadow-xl shadow-black/20 backdrop-blur-xl" : ""}`}>
+        <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? "h-14" : "h-20"}`}>
+          {/* Logo */}
+          <Link href="/" className="text-[12px] font-semibold tracking-tight text-neutral-100" onClick={() => setIsOpen(false)}>
             FIDA.
           </Link>
 
-          <div className="hidden items-center gap-1 md:flex">
+          {/* Desktop Navigation */}
+          <div className="hidden items-center gap-8 md:flex">
             {navigation.map((item) => (
-              <Link key={item.href} href={item.href} className={`rounded-full px-3 py-2 text-xs transition duration-300 ${isActive(item.href) ? "bg-white text-black" : "text-neutral-500 hover:bg-white/10 hover:text-white"}`}>
+              <Link key={item.href} href={item.href} className={`relative text-[12px] transition-colors duration-300 ${isActive(item.href) ? "font-medium text-white" : "text-neutral-500 hover:text-neutral-200"}`}>
                 {item.name}
+
+                {isActive(item.href) && <span className="absolute -bottom-2 left-0 h-px w-full bg-blue-500" />}
               </Link>
             ))}
           </div>
 
-          <button
-            type="button"
-            aria-label="Toggle navigation menu"
-            aria-expanded={isOpen}
-            onClick={() => setIsOpen(!isOpen)}
-            className="ml-1 rounded-full px-3 py-2 text-xs text-neutral-400 transition hover:bg-white/10 hover:text-white md:hidden"
-          >
-            {isOpen ? "Close" : "Menu"}
+          {/* Mobile Menu Button */}
+          <button type="button" aria-label="Toggle navigation menu" aria-expanded={isOpen} onClick={() => setIsOpen(!isOpen)} className="rounded-lg p-2 text-neutral-400 transition-colors hover:bg-neutral-900 hover:text-white md:hidden">
+            <span className="text-xl">{isOpen ? "×" : "☰"}</span>
           </button>
         </div>
-      </nav>
 
-      {isOpen && (
-        <div className="pointer-events-auto mx-auto mt-3 max-w-xs rounded-2xl border border-neutral-800 bg-neutral-950/95 p-2 shadow-2xl shadow-black/50 backdrop-blur-xl md:hidden">
-          <div className="flex flex-col gap-1">
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className={`rounded-xl px-4 py-3 text-sm transition ${isActive(item.href) ? "bg-white text-black" : "text-neutral-500 hover:bg-white/10 hover:text-white"}`}
-              >
-                {item.name}
-              </Link>
-            ))}
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="border-t border-neutral-800 py-4 md:hidden">
+            <div className="flex flex-col gap-1">
+              {navigation.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`rounded-lg px-3 py-3 text-[12px] transition-colors ${isActive(item.href) ? "bg-neutral-900 font-medium text-white" : "text-neutral-500 hover:bg-neutral-900 hover:text-white"}`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </nav>
     </header>
   );
 }
