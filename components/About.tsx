@@ -1,5 +1,11 @@
 import Container from "@/components/Container";
 import Reveal from "@/components/Reveal";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "Learn more about Fida Taufiq Imazuddin, an IT enthusiast exploring technology, web development, and UI/UX design.",
+};
 
 export default function About() {
   return (

@@ -5,6 +5,12 @@ import SectionHeading from "@/components/SectionHeading";
 import { projects } from "@/data/projects";
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "Explore projects and experiments by Fida Taufiq Imazuddin in web development, technology, and design.",
+};
 
 export default function Projects() {
   const featuredProjects = projects.slice(0, 4);
