@@ -15,8 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fida Taufiq Imazuddin | Portfolio",
-  description: "Portfolio of Fida Taufiq Imazuddin — IT enthusiast, designer, and developer.",
+  title: {
+    default: "Fida Taufiq Imazuddin | Portfolio",
+    template: "%s | Fida Taufiq Imazuddin",
+  },
+  description: "Personal portfolio of Fida Taufiq Imazuddin, exploring technology, web development, and UI/UX design.",
+  keywords: ["Fida Taufiq Imazuddin", "Portfolio", "Web Developer", "Frontend Developer", "UI UX Designer", "Next.js"],
 };
 
 export default function RootLayout({
