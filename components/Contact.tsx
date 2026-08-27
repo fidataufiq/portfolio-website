@@ -21,7 +21,7 @@ const contactLinks = [
 
 export default function Contact() {
   return (
-    <section className="border-t border-neutral-900 py-24 sm:py-32">
+    <section className="py-24 sm:py-32">
       <Container>
         <Reveal>
           <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-24">
