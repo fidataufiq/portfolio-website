@@ -58,20 +58,20 @@ img {
 ======================================== */
 
 .text-display {
-  font-size: clamp(2.5rem, 6vw, 5.5rem);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-}
-
-.text-heading {
-  font-size: clamp(1.875rem, 4vw, 3.25rem);
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
 }
 
+.text-heading {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
 .text-subheading {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  line-height: 1.4;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .text-body {
@@ -81,6 +81,7 @@ img {
 
 .text-label {
   font-size: 0.7rem;
+  line-height: 1.4;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
