@@ -4,18 +4,18 @@ import Reveal from "@/components/Reveal";
 const contactLinks = [
   {
     label: "Email",
-    value: "your@email.com",
-    href: "mailto:your@email.com",
+    value: "fidataufiqimazuddin@email.com",
+    href: "mailto:fidataufiqimazuddin@email.com",
   },
   {
     label: "LinkedIn",
-    value: "LinkedIn",
-    href: "https://linkedin.com",
+    value: "Fida Taufiq Imazuddin",
+    href: "www.linkedin.com/in/fida-taufiq-imazuddin-488291222",
   },
   {
     label: "GitHub",
-    value: "GitHub",
-    href: "https://github.com",
+    value: "fidataufiq",
+    href: "https://github.com/fidataufiq",
   },
 ];
 
