@@ -1,0 +1,18 @@
+// use prisma-next
+
+model Project {
+  id              Int      @id @default(autoincrement())
+  slug            String   @unique
+  title           String
+  description     String
+  longDescription  String
+  category        String
+  technologies    String[]
+  year            Int
+  role            String
+  image           String
+  href            String?
+  gallery         String[]
+  createdAt       TimestamptzString @default(now())
+  updatedAt       temporal.updatedAtString()
+}
